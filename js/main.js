@@ -24,20 +24,22 @@ Alcuni consigli
 
 
 //collegare il bottone send
-document.getElementById("button").addEventListener("click", function calculatePrice(availableDiscountCodes) {
+document.getElementById("button").addEventListener("click", function calculatePrice() {
 
 
 
-
+    //creo un array con i codici sconto
     let availableDiscountCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
-
+    //mi creo le variabili per ottenere le informazioni inserite dall'utente in merito ad
+    //ore di lavoro, tipo di lavoro e codice sconto
     let hours = parseInt(document.getElementById("hours").value);
     let typeOfWork = parseInt(document.getElementById("input").value);
     let DiscountCode = parseInt(document.getElementById("Discount").value);
 
+    //imposto il prezzo finale a 0 per poi poterci eseguire le varie operazioni
     let finalprice = 0;
-
+    //con if dico al programma come calcolare in base al tipo di lavoro e alle ore selezionate dall'utente
     //offerta project analysis
     if (typeOfWork = 1) {
         finalprice = 33.6 * hours;
@@ -51,24 +53,26 @@ document.getElementById("button").addEventListener("click", function calculatePr
         finalprice = 20.5 * hours
     } else { }
 
-    //verifico e applico sconti
+    //verifico e applico sconti impostando con variabile booleana la presenza del codice sconto come falsa
+    //e dicendo quando invece deve essere vera
     let discountcodepresent = false;
     for (let i = 0; i < availableDiscountCodes.length; i++) {
         if (availableDiscountCodes[i] == DiscountCode) {
             discountcodepresent = true
         }
     }
+    //calcolo il prezzo finale con sconto applicato
     if (discountcodepresent) {
         finalprice = finalprice - ((finalprice * 25) / 100);
     }
 
+    //il prezzo finale deve essere visualizzato in forma umana
+    finalprice = finalprice.toofixed(2);
 
+    //stampo in HTML il prezzo del lavoro richiesto
+    document.getElementById("finalprice").innerHTML = "il prezzo è di: " + finalprice + "&euro;"
 
-
-
-}
-
-);
+});
 
 
 
