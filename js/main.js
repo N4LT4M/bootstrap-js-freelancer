@@ -33,7 +33,7 @@ document.getElementById("button").addEventListener("click", function calculatePr
 
     //mi creo le variabili per ottenere le informazioni inserite dall'utente in merito ad
     //ore di lavoro, tipo di lavoro e codice sconto
-    let hours = parseInt(document.getElementById("hours").value);
+    let hours = parseInt(document.getElementById("Hours").value);
     let typeOfWork = parseInt(document.getElementById("input").value);
     let DiscountCode = parseInt(document.getElementById("Discount").value);
 
@@ -51,7 +51,7 @@ document.getElementById("button").addEventListener("click", function calculatePr
         //sviluppo backend
     } else if (typeOfWork = 3) {
         finalprice = 20.5 * hours
-    } else { }
+    }
 
     //verifico e applico sconti impostando con variabile booleana la presenza del codice sconto come falsa
     //e dicendo quando invece deve essere vera
@@ -67,7 +67,7 @@ document.getElementById("button").addEventListener("click", function calculatePr
     }
 
     //il prezzo finale deve essere visualizzato in forma umana
-    finalprice = finalprice.tofixed(2);
+    finalprice = finalprice.toFixed(2);
 
     //stampo in HTML il prezzo del lavoro richiesto
     document.getElementById("finalprice").innerHTML = "il prezzo è di: " + finalprice + "&euro;"
