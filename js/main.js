@@ -35,21 +35,21 @@ document.getElementById("button").addEventListener("click", function calculatePr
     //ore di lavoro, tipo di lavoro e codice sconto
     let hours = parseInt(document.getElementById("Hours").value);
     let typeOfWork = parseInt(document.getElementById("input").value);
-    let DiscountCode = parseInt(document.getElementById("Discount").value);
+    let DiscountCode = (document.getElementById("Discount").value);
 
     //imposto il prezzo finale a 0 per poi poterci eseguire le varie operazioni
     let finalprice = 0;
     //con if dico al programma come calcolare in base al tipo di lavoro e alle ore selezionate dall'utente
     //offerta project analysis
-    if (typeOfWork = 1) {
+    if (typeOfWork == 1) {
         finalprice = 33.6 * hours;
 
         // sviluppo frontend   
-    } else if (typeOfWork = 2) {
+    } else if (typeOfWork == 2) {
         finalprice = 15.3 * hours;
 
         //sviluppo backend
-    } else if (typeOfWork = 3) {
+    } else if (typeOfWork == 3) {
         finalprice = 20.5 * hours
     }
 
