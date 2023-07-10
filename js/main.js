@@ -67,7 +67,7 @@ document.getElementById("button").addEventListener("click", function calculatePr
     }
 
     //il prezzo finale deve essere visualizzato in forma umana
-    finalprice = finalprice.toofixed(2);
+    finalprice = finalprice.tofixed(2);
 
     //stampo in HTML il prezzo del lavoro richiesto
     document.getElementById("finalprice").innerHTML = "il prezzo è di: " + finalprice + "&euro;"
