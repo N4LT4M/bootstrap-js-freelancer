@@ -28,7 +28,7 @@ document.getElementById("button").addEventListener("click", function calculatePr
 
 
 
-   
+
     let availableDiscountCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
 
@@ -54,16 +54,21 @@ document.getElementById("button").addEventListener("click", function calculatePr
     //verifico e applico sconti
     let discountcodepresent = false;
     for (let i = 0; i < availableDiscountCodes.length; i++) {
-        if (availableDiscountCodes[i] == DiscountCode){
+        if (availableDiscountCodes[i] == DiscountCode) {
             discountcodepresent = true
         }
     }
+    if (discountcodepresent) {
+        finalprice = finalprice - ((finalprice * 25) / 100);
+    }
+
+
 
 
 
 }
 
-
+);
 
 
 
