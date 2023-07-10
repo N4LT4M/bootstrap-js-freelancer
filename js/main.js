@@ -18,19 +18,19 @@ Alcuni consigli
 - Ricordatevi che se non state bene attenti, Javascript vi fa le magie con i tipi :faccia_leggermente_sorridente:
 - Ricordatevi che il form ha un comportamento “strano” quando fate click sul bottone Send che è di tipo submit (type=submit).
 */
-let availableDiscountCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
+
 
 
 
 
 //collegare il bottone send
-document.getElementById("button").addEventListener("click", function ());
+document.getElementById("button").addEventListener("click", function calculatePrice(availableDiscountCodes) {
 
 
 
+   
+    let availableDiscountCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
-
-function calculatePrice(availableDiscountCodes) {
 
     let hours = parseInt(document.getElementById("hours").value);
     let typeOfWork = parseInt(document.getElementById("input").value);
@@ -47,9 +47,18 @@ function calculatePrice(availableDiscountCodes) {
         finalprice = 15.3 * hours;
 
         //sviluppo backend
-    }else if (typeOfWork = 3) {
+    } else if (typeOfWork = 3) {
         finalprice = 20.5 * hours
+    } else { }
+
+    //verifico e applico sconti
+    let discountcodepresent = false;
+    for (let i = 0; i < availableDiscountCodes.length; i++) {
+        if (availableDiscountCodes[i] == DiscountCode){
+            discountcodepresent = true
+        }
     }
+
 
 
 }
@@ -60,5 +69,5 @@ function calculatePrice(availableDiscountCodes) {
 
 
 
-//funzioni
+
 
